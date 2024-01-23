@@ -1,0 +1,20 @@
+<h1 mat-dialog-title *ngIf="content || templateRef">{{ title }}</h1>
+<div mat-dialog-content>
+  <ng-container *ngIf="templateRef">
+    <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+  </ng-container>
+  <ng-container *ngIf="componentRef">
+    <ng-container
+      *ngComponentOutlet="componentRef; inputs: componentInputs"
+    ></ng-container>
+  </ng-container>
+  <ng-container *ngIf="content">
+    <p>{{ content }}</p>
+  </ng-container>
+</div>
+<div mat-dialog-actions *ngIf="content || templateRef">
+  <button mat-raised-button mat-dialog-close>Close</button>
+  <button mat-raised-button [color]="variant" [mat-dialog-close]="true">
+    Ok
+  </button>
+</div>

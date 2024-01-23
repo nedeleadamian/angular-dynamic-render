@@ -1,0 +1,24 @@
+<h1>Angular dev interview</h1>
+<p>Create a service that opens a popup with predefined <code>ok</code> and <code>cancel</code> actions, and a title. The content of the popup can be one of the following:</p>
+<ul>
+  <li>A simple text message</li>
+  <li>Another component</li>
+  <li>HTML content</li>
+</ul>
+<p>The service should expose a single <code>openModal</code> method that is type safe. For example: I should not be able to pass both a text and a component to the method.</p>
+<p>
+  When setting a text message I should be able to send: message, title, variant
+</p>
+<p>
+  When setting HTML content I should be able to send the content, title and variant. The HTML content could be very complex and could also have binded data.
+</p>
+<p>
+  When setting a component I should be able to send only the component. The component should also receive data that it can render.
+</p>
+<p>The <code>ok</code> action should be stylizable with a variant (primary, accent, warn, etc.)</p>
+
+<app-open-with-text></app-open-with-text>
+
+<app-open-with-html></app-open-with-html>
+
+<app-open-with-component></app-open-with-component>
